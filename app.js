@@ -4,7 +4,7 @@ const list = document.querySelector("#herb-list")
 const count = document.querySelector(".count")
 
 async function loadHerbs() {
-  const response = await fetch("data/herb.json")
+  const response = await fetch("data/herbs.json") /* file name was incorrect was written as herb.json instead of herbs.json*/ 
   if (!response.ok) {
     throw new Error(`Could not load ${response.url}: ${response.status} ${response.statusText}`)
   }
@@ -34,4 +34,3 @@ async function show() {
   count.textContent = `${herbs.length} herbs grow here.`
 }
 
-show()
