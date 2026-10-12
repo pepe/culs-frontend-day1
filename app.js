@@ -1,7 +1,6 @@
 // Loads the herbs from data/herbs.json and shows each one as a card.
 
-const list = document.querySelector("#herb-list")
-const count = document.querySelector(".count")
+const list = document.querySelector("#herbs-list") // should match by id in index.html
 
 async function loadHerbs() {
   const response = await fetch("data/herb.json")
@@ -29,9 +28,13 @@ function card(herb) {
 }
 
 async function show() {
-  const herbs = await loadHerbs()
-  list.replaceChildren(...herbs.map(card))
-  count.textContent = `${herbs.length} herbs grow here.`
+  try {
+    const herbs = await loadHerbs()
+    list.replaceChildren(...herbs.map(card))
+    count.textContent = `${herbs.length} herbs grow here.`
+  } catch (error) {
+    console.error(error)
+    count.textContent = "Failed to load herbs. Please try again later."
+  }
 }
 
-show()

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Little Herb Garden</title>
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -26,18 +26,23 @@
       <div>
         <h1>Herbs you can smell, taste and grow</h1>
         <p>A small garden with herbs for the kitchen, for tea and for the bees.
-          See <a href="#herbs">what grows here</p>
+          See <a href="#herbs">what grows here </a>.</p> <!-- missing closing tag for anchor element, added it -->
       </div>
-      <img class="hero" src="images/garden.png" alt="Two raised beds full of herbs, with a bee">
+     <div class="hero-wrapper">
+  <img class="hero" src="images/garden.svg" alt="Two raised beds full of herbs, with a bee">
+  <p class="hero-description">"Two raised beds full of herbs, with a bee"</p>
+</div> <!-- the position of the text to be under the image by wrapping them in a container -->
+
     </section>
 
     <section id="herbs">
       <h2>What grows here</h2>
       <p class="count">Loading the herbs…</p>
-      <ul id="herbs-list" class="cards"></ul>
+      <ul id="herbs-list" class="cards"></ul> <!-- should match by id in app.js -->
+
     </section>
 
-    <section id="visit">
+    <section id="visiting"> <!-- should match href link in nav -->
       <h2>Visit</h2>
       <p>The garden is open every day from sunrise to sunset.
         Bring a friend, rub a leaf between your fingers, and leave the bees alone.</p>
