@@ -1,6 +1,6 @@
 // Loads the herbs from data/herbs.json and shows each one as a card.
 
-const list = document.querySelector("#herb-list")
+const list = document.querySelector("#herbs-list")
 const count = document.querySelector(".count")
 
 async function loadHerbs() {
