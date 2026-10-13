@@ -297,3 +297,59 @@ footer p {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ---------- Decoration: bees and flowers (CSS only, no JS) ---------- */
+main .hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero > * {
+  position: relative;   /* keeps text and SVG above the bees */
+}
+
+.deco {
+  position: absolute;
+  pointer-events: none;
+}
+
+.bee-a {
+  top: 12%;
+  left: 55%;
+  width: 3rem;
+  height: auto;
+  animation: buzz 6s ease-in-out infinite;
+}
+
+.bee-b {
+  bottom: 10%;
+  right: 6%;
+  width: 2.25rem;
+  height: auto;
+  animation: buzz 7s ease-in-out infinite reverse;
+}
+
+/* The bee floats in a small loop */
+@keyframes buzz {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(25px, -15px) rotate(6deg); }
+  50%  { transform: translate(50px, 5px) rotate(-4deg); }
+  75%  { transform: translate(20px, 15px) rotate(4deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* A row of lavender sprigs, repeated with a background image */
+.flower-row {
+  height: 70px;
+  background-image: url("images/lavender-sprig.svg");
+  background-repeat: repeat-x;
+  background-size: 28px 70px;
+  background-position: bottom;
+}
+
+/* Accessibility: stop the bees moving if the user asked for less motion */
+@media (prefers-reduced-motion: reduce) {
+  .bee-a, .bee-b {
+    animation: none;
+  }
+}
