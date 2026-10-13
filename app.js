@@ -1,10 +1,10 @@
 // Loads the herbs from data/herbs.json and shows each one as a card.
 
-const list = document.querySelector("#herb-list")
+const list = document.querySelector("#herbs-list")
 const count = document.querySelector(".count")
 
 async function loadHerbs() {
-  const response = await fetch("data/herbs.json") /* file name was incorrect was written as herb.json instead of herbs.json*/ 
+  const response = await fetch("data/herb.json")
   if (!response.ok) {
     throw new Error(`Could not load ${response.url}: ${response.status} ${response.statusText}`)
   }
