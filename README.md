@@ -2,7 +2,7 @@
 
 A small website for day 1 of **Frontend Development**.
 
-It is broken. Your job is to find out why, and to repair it.
+It is fixed by @pepe Josef Pospisil
 
 ## What you need
 
