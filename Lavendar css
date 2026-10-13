@@ -1,0 +1,299 @@
+/* Lavender page. Mobile first.
+   FLEX: header, nav, button.  GRID: hero, cards, steps, uses. */
+
+/* ---------- Colours ---------- */
+:root {
+  --deep: #3d2a63;      /* dark purple: text and header */
+  --purple: #6b4fa0;    /* main lavender purple */
+  --lavender: #a48fd6;  /* flower colour */
+  --lilac: #e9e2f7;     /* soft background */
+  --mist: #f7f4fc;      /* page background */
+  --sage: #7a8c66;      /* leaf green */
+  --honey: #f0c75e;     /* bee yellow */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: var(--deep);
+  background: var(--mist);
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: var(--purple);
+}
+
+/* ---------- Accessibility ---------- */
+:focus-visible {
+  outline: 3px solid var(--honey);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  padding: 0.5rem 1rem;
+  background: var(--deep);
+  color: white;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ---------- Header (flex) ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--deep);
+}
+
+.site-header a {
+  color: white;
+  text-decoration: none;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Page width ---------- */
+main section {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* ---------- Hero (grid) ---------- */
+main .hero {
+  max-width: none;
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  padding: 3rem 1.5rem 2rem;
+  background: linear-gradient(160deg, var(--lilac), var(--lavender));
+}
+
+.hero-text {
+  max-width: 32rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  color: var(--deep);
+}
+
+.latin {
+  margin: 0;
+  font-style: italic;
+  color: var(--purple);
+}
+
+.lead {
+  font-size: 1.15rem;
+}
+
+.button {
+  display: inline-flex;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  background: var(--deep);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--purple);
+}
+
+.bouquet {
+  margin: 0;
+  text-align: center;
+}
+
+.bouquet svg {
+  width: 100%;
+  max-width: 18rem;
+  height: auto;
+}
+
+/* SVG colours */
+.stem { fill: none; stroke: var(--sage); stroke-width: 4; stroke-linecap: round; }
+.leaf { fill: var(--sage); }
+.flowers ellipse { fill: var(--purple); }
+.flowers.light ellipse { fill: #8b6fc4; }
+.flowers.dark ellipse { fill: var(--deep); }
+.bee .body { fill: var(--honey); }
+.bee .stripe { stroke: var(--deep); stroke-width: 2.5; }
+.bee .wing { fill: white; opacity: 0.85; }
+
+/* ---------- Cards (grid) ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 4px 14px rgba(61, 42, 99, 0.1);
+  border-top: 6px solid var(--lavender);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.card dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--mist);
+  font-size: 0.95rem;
+}
+
+.card dt {
+  font-weight: 700;
+}
+
+.card dd {
+  margin: 0;
+}
+
+/* ---------- Grow steps (grid) ---------- */
+main .grow {
+  max-width: none;
+  background: var(--lilac);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1.25rem;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps li {
+  counter-increment: step;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: white;
+}
+
+/* The numbers 1–4 in purple circles */
+.steps li::before {
+  content: counter(step);
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--purple);
+  color: white;
+  font-weight: 700;
+}
+
+.steps h3 {
+  margin: 0.75rem 0 0.25rem;
+}
+
+.steps p {
+  margin: 0;
+}
+
+/* ---------- Uses (grid) ---------- */
+.uses {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.uses article {
+  padding: 1.5rem;
+  border-left: 6px solid var(--sage);
+  border-radius: 0.5rem;
+  background: white;
+}
+
+.uses h3 {
+  margin-top: 0;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 2rem 1.5rem;
+  background: var(--deep);
+  color: var(--lilac);
+  text-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+/* ---------- Bigger screens (tablet and desktop) ---------- */
+@media (min-width: 45rem) {
+  main .hero {
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem max(1.5rem, calc((100% - 64rem) / 2));
+  }
+
+  .uses {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
