@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lavender | The Little Herb Garden</title>
+  <meta name="description" content="Lavender in the Little Herb Garden: four kinds of lavender, how to grow it and what to use it for.">
+  <link rel="icon" href="images/Logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="lavender.css">
+
+  <!-- JSON data about this plant (JSON-LD). Search engines read it; it is not JavaScript. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Thing",
+    "name": "Lavender",
+    "alternateName": "Lavandula",
+    "description": "A small Mediterranean shrub from the mint family with grey leaves and purple flower spikes.",
+    "additionalProperty": [
+      { "@type": "PropertyValue", "name": "Family", "value": "Lamiaceae (mint family)" },
+      { "@type": "PropertyValue", "name": "Flowering", "value": "June to August" },
+      { "@type": "PropertyValue", "name": "Light", "value": "Full sun" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="home" href="index.html">
+      <img src="images/Logo.svg" alt="" width="36" height="36">
+      The Little Herb Garden
+    </a>
+    <nav aria-label="Lavender page">
+      <ul>
+        <li><a href="#kinds">Kinds</a></li>
+        <li><a href="#grow">Grow</a></li>
+        <li><a href="#use">Use</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-text">
+        <p class="latin">Lavandula · mint family</p>
+        <h1 id="page-title">Lavender</h1>
+        <p class="lead">A small Mediterranean shrub with silver-grey leaves and purple flower spikes.
+          It loves sun, needs little water, and the bees visit it all summer.</p>
+        <a class="button" href="#kinds">Meet the four kinds</a>
+      </div>
+
+      <figure class="bouquet">
+        <svg viewBox="0 0 240 300" role="img" aria-labelledby="bouquet-title">
+          <title id="bouquet-title">Three lavender stems with purple flowers and a bee</title>
+          <!-- stems -->
+          <path class="stem" d="M120 295 C118 220 122 150 120 70"/>
+          <path class="stem" d="M120 295 C110 230 85 170 70 105"/>
+          <path class="stem" d="M120 295 C130 230 155 175 172 112"/>
+          <!-- leaves -->
+          <path class="leaf" d="M119 250 C96 244 82 230 76 214 C96 218 112 232 119 250Z"/>
+          <path class="leaf" d="M121 232 C144 226 158 212 164 196 C144 200 128 214 121 232Z"/>
+          <!-- flowers: middle stem -->
+          <g class="flowers">
+            <ellipse cx="120" cy="56" rx="6" ry="9"/>
+            <ellipse cx="113" cy="72" rx="7" ry="10"/>
+            <ellipse cx="127" cy="72" rx="7" ry="10"/>
+            <ellipse cx="113" cy="90" rx="7" ry="10"/>
+            <ellipse cx="127" cy="90" rx="7" ry="10"/>
+            <ellipse cx="114" cy="108" rx="6" ry="9"/>
+            <ellipse cx="126" cy="108" rx="6" ry="9"/>
+          </g>
+          <!-- flowers: left stem -->
+          <g class="flowers light">
+            <ellipse cx="68" cy="92" rx="6" ry="9"/>
+            <ellipse cx="62" cy="107" rx="6" ry="9"/>
+            <ellipse cx="75" cy="106" rx="6" ry="9"/>
+            <ellipse cx="65" cy="123" rx="6" ry="9"/>
+            <ellipse cx="78" cy="122" rx="6" ry="9"/>
+          </g>
+          <!-- flowers: right stem -->
+          <g class="flowers dark">
+            <ellipse cx="174" cy="98" rx="6" ry="9"/>
+            <ellipse cx="167" cy="113" rx="6" ry="9"/>
+            <ellipse cx="180" cy="113" rx="6" ry="9"/>
+            <ellipse cx="169" cy="130" rx="6" ry="9"/>
+            <ellipse cx="182" cy="129" rx="6" ry="9"/>
+          </g>
+          <!-- bee -->
+          <g class="bee">
+            <ellipse class="wing" cx="196" cy="52" rx="8" ry="5"/>
+            <ellipse class="wing" cx="207" cy="50" rx="8" ry="5"/>
+            <ellipse class="body" cx="202" cy="62" rx="11" ry="8"/>
+            <path class="stripe" d="M198 55 V69 M205 55 V69"/>
+          </g>
+        </svg>
+      </figure>
+    </section>
+
+    <section id="kinds" aria-labelledby="kinds-title">
+      <h2 id="kinds-title">Four kinds of lavender</h2>
+      <ul class="cards">
+        <li class="card">
+          <h3>English lavender</h3>
+          <p class="latin">Lavandula angustifolia</p>
+          <dl>
+            <dt>Height</dt><dd>30–60 cm</dd>
+            <dt>Flowers</dt><dd>June–July</dd>
+            <dt>Winter</dt><dd>Survives frost</dd>
+          </dl>
+          <p>The sweetest scent. Used for tea, baking and dried bunches.</p>
+        </li>
+        <li class="card">
+          <h3>Lavandin</h3>
+          <p class="latin">Lavandula × intermedia</p>
+          <dl>
+            <dt>Height</dt><dd>60–90 cm</dd>
+            <dt>Flowers</dt><dd>July–August</dd>
+            <dt>Winter</dt><dd>Survives frost</dd>
+          </dl>
+          <p>A hybrid with long stems. Grown in fields for lavender oil.</p>
+        </li>
+        <li class="card">
+          <h3>Spanish lavender</h3>
+          <p class="latin">Lavandula stoechas</p>
+          <dl>
+            <dt>Height</dt><dd>30–60 cm</dd>
+            <dt>Flowers</dt><dd>May–July</dd>
+            <dt>Winter</dt><dd>Bring indoors</dd>
+          </dl>
+          <p>Has purple "ears" on top of each flower. Best in pots.</p>
+        </li>
+        <li class="card">
+          <h3>Spike lavender</h3>
+          <p class="latin">Lavandula latifolia</p>
+          <dl>
+            <dt>Height</dt><dd>40–80 cm</dd>
+            <dt>Flowers</dt><dd>July–August</dd>
+            <dt>Winter</dt><dd>Bring indoors</dd>
+          </dl>
+          <p>Broad leaves and a sharper, camphor-like smell.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="grow" class="grow" aria-labelledby="grow-title">
+      <h2 id="grow-title">How to grow it</h2>
+      <ol class="steps">
+        <li><h3>Sun</h3><p>Plant it in the sunniest spot you have.</p></li>
+        <li><h3>Soil</h3><p>Light, well-drained soil. Wet roots are its biggest enemy.</p></li>
+        <li><h3>Water</h3><p>Water young plants. Older plants rarely need it.</p></li>
+        <li><h3>Prune</h3><p>Cut back after flowering, never into the old, bare wood.</p></li>
+      </ol>
+    </section>
+
+    <section id="use" aria-labelledby="use-title">
+      <h2 id="use-title">What to use it for</h2>
+      <div class="uses">
+        <article>
+          <h3>In the kitchen</h3>
+          <p>A few flowers of English lavender flavour biscuits, honey and lemonade. Use very little.</p>
+        </article>
+        <article>
+          <h3>In the house</h3>
+          <p>Dry bunches upside down in a dark place, then put them in small bags in the wardrobe.</p>
+        </article>
+        <article>
+          <h3>For the bees</h3>
+          <p>Bees and butterflies love it. Leave some flowers on the plant for them.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="index.html">Back to the Little Herb Garden</a></p>
+    <p>Day 2 practice project, Frontend Development.</p>
+  </footer>
+</body>
+</html>
