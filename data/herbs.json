@@ -1,47 +1,55 @@
 [
   {
+    "id": "basil",
     "name": "Basil",
     "latin": "Ocimum basilicum",
     "use": "Tomatoes, pesto and anything summery.",
     "life": "annual"
   },
   {
+    "id": "spearmint",
     "name": "Spearmint",
     "latin": "Mentha spicata",
     "use": "Fresh tea, and it spreads everywhere.",
     "life": "perennial"
   },
   {
+    "id": "rosemary",
     "name": "Rosemary",
     "latin": "Salvia rosmarinus",
     "use": "Potatoes, bread and roast vegetables.",
     "life": "perennial"
   },
   {
+    "id": "thyme",
     "name": "Thyme",
     "latin": "Thymus vulgaris",
     "use": "Soups and stews. Bees love its flowers.",
     "life": "perennial"
   },
   {
+    "id": "lavender",
     "name": "Lavender",
     "latin": "Lavandula angustifolia",
     "use": "Scent for the wardrobe, a feast for bees.",
     "life": "perennial"
   },
   {
+    "id": "sage",
     "name": "Sage",
     "latin": "Salvia officinalis",
     "use": "Butter sauces and tea.",
     "life": "perennial"
   },
   {
+    "id": "chamomile",
     "name": "Chamomile",
     "latin": "Matricaria chamomilla",
     "use": "A calming cup of tea.",
     "life": "annual"
   },
   {
+    "id": "chives",
     "name": "Chives",
     "latin": "Allium schoenoprasum",
     "use": "Bread and butter, eggs, potatoes.",

@@ -1,0 +1,105 @@
+{
+  "id": "lavender",
+  "name": "Lavender",
+  "latin": "Lavandula angustifolia",
+  "family": "Lamiaceae (mint family)",
+  "life": "perennial",
+  "description": "A silver-green shrub with purple flower spikes that smell calm, sweet and a little bit like soap.",
+  "theme": {
+    "light": "#efe9f7",
+    "dark": "#5b4283"
+  },
+  "image": {
+    "src": "images/lavender-field.jpg",
+    "alt": "A field of lavender in bloom, with purple rows reaching the horizon"
+  },
+  "video": {
+    "src": "videos/lavender.mp4",
+    "caption": "Lavender in 3 minutes"
+  },
+  "quickFacts": [
+    {
+      "label": "Life cycle",
+      "value": "Perennial"
+    },
+    {
+      "label": "Origin",
+      "value": "Mediterranean"
+    },
+    {
+      "label": "Blooms",
+      "value": "June to August"
+    },
+    {
+      "label": "Height",
+      "value": "30 to 90 cm"
+    },
+    {
+      "label": "Likes",
+      "value": "Full sun, dry soil"
+    }
+  ],
+  "uses": [
+    {
+      "title": "Wardrobe",
+      "text": "Dried flowers in small cloth sachets."
+    },
+    {
+      "title": "Kitchen",
+      "text": "A pinch in shortbread, honey or tea (use culinary lavender)."
+    },
+    {
+      "title": "Garden",
+      "text": "Bees and butterflies love it."
+    },
+    {
+      "title": "Oil",
+      "text": "Essential oil is used in soaps and candles. It is for the skin and the air, not for eating."
+    }
+  ],
+  "growingTips": [
+    {
+      "title": "Sun",
+      "text": "Give it at least six hours of full sun a day."
+    },
+    {
+      "title": "Soil",
+      "text": "Light, sandy and well drained. Wet soil rots the roots."
+    },
+    {
+      "title": "Water",
+      "text": "Little and rarely, once the plant is established."
+    },
+    {
+      "title": "Pruning",
+      "text": "Trim lightly after flowering, but never cut into the old brown wood, because it will not regrow from there."
+    }
+  ],
+  "parts": [
+    {
+      "id": "flowers",
+      "name": "Flowers",
+      "text": "Many tiny purple flowers sit together on each spike. They bloom from June to August, and their scent comes from oil in tiny glands."
+    },
+    {
+      "id": "stem",
+      "name": "Stems",
+      "text": "Like other plants in the mint family, lavender has square stems. Near the bottom they turn brown and woody over the years."
+    },
+    {
+      "id": "leaves",
+      "name": "Leaves",
+      "text": "The narrow leaves look silver-green because they are covered in fine hairs. The hairs help the plant keep water in hot, dry weather."
+    },
+    {
+      "id": "roots",
+      "name": "Roots",
+      "text": "The roots need soil that drains fast. If they stay wet for long, they rot, which is the most common reason lavender dies."
+    },
+    {
+      "id": "bee",
+      "name": "Bee",
+      "text": "Lavender is full of nectar, so bees and butterflies visit it all summer. Avoid spraying the flowers so they stay safe."
+    }
+  ]
+}

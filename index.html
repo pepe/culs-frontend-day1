@@ -4,17 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Little Herb Garden</title>
-  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="images/Logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
+  <script src="community.js" defer></script>
+  <script src="interest.js" defer></script>
+  <script src="extras.js" defer></script>
+  <script src="menu.js" defer></script>
 </head>
 <body>
   <header class="site-header">
-    <img class="logo" src="images/logo.svg" alt="" width="48" height="48">
+    <img class="logo" src="images/Logo.svg" alt="" width="48" height="48">
     <p class="site-name">The Little Herb Garden</p>
-    <nav>
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu"
+            aria-expanded="false" aria-controls="site-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="site-navigation">
       <ul>
         <li><a href="#herbs">Herbs</a></li>
+        <li><a href="#favorites">Favorites</a></li>
         <li><a href="#visit">Visit</a></li>
         <li><a href="#about">About</a></li>
       </ul>
@@ -26,15 +37,26 @@
       <div>
         <h1>Herbs you can smell, taste and grow</h1>
         <p>A small garden with herbs for the kitchen, for tea and for the bees.
-          See <a href="#herbs">what grows here</p>
+          See <a href="#herbs">what grows here</a></p>
       </div>
       <img class="hero" src="images/garden.svg" alt="Two raised beds full of herbs, with a bee">
     </section>
 
     <section id="herbs">
       <h2>What grows here</h2>
-      <p class="count">Loading the herbs…</p>
+      <div class="search">
+        <label for="herb-search">Search herbs</label>
+        <input id="herb-search" type="search" placeholder="e.g. mint or Salvia" autocomplete="off">
+      </div>
+      <p class="count" role="status">Loading the herbs…</p>
       <ul id="herbs-list" class="cards"></ul>
+    </section>
+
+    <section id="favorites">
+      <h2>My favorites</h2>
+      <p id="favorites-empty" class="count">Your favorite herbs will appear here. Add any herb to get started.</p>
+      <p id="favorites-status" class="message" role="status"></p>
+      <ul id="favorites-list" class="cards"></ul>
     </section>
 
     <section id="visit">
@@ -54,5 +76,14 @@
     <p>Made with HTML, CSS and JavaScript.
       <a href="https://developer.mozilla.org/">MDN</a> helped.</p>
   </footer>
+
+  <div id="herb-dialog-backdrop" class="herb-dialog-backdrop" hidden>
+    <section id="herb-dialog" class="herb-dialog" role="dialog" aria-modal="true"
+             aria-labelledby="herb-dialog-title" aria-busy="false">
+      <button id="herb-dialog-close" class="modal-close" type="button"
+              aria-label="Close herb details">×</button>
+      <div id="herb-dialog-content" aria-live="polite"></div>
+    </section>
+  </div>
 </body>
 </html>

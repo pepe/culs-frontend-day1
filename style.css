@@ -1,128 +1,1003 @@
-/* The Little Herb Garden */
+/* The Little Herb Garden
+   Written in plain CSS, using utility-style design tokens
+   (spacing, radius, shadow scales) in the spirit of Tailwind / Bootstrap. */
 
 :root {
+  /* colours */
   --leaf: #2f6b3a;
+  --leaf-dark: #1f4d29;
   --leaf-light: #e7f1e4;
   --soil: #5b4636;
-  --paper: #fbfaf5;
+  --paper: #f6f8f1;
   --ink: #1f2420;
-  --line: #cfdccb;
+  --muted: #5d675f;
+  --line: #d6e2d1;
+  --lavender: #7b5ea7;
+  --lavender-dark: #5b4283;
+  --lavender-light: #efe9f7;
+
+  /* scales */
+  --radius-sm: 0.5rem;
+  --radius: 0.875rem;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(31, 36, 32, 0.08);
+  --shadow-md: 0 6px 16px rgba(31, 77, 41, 0.14);
+  --shadow-lg: 0 14px 30px rgba(31, 77, 41, 0.2);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  line-height: 1.5;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
   color: var(--ink);
   background: var(--paper);
 }
 
-a {
-  color: var(--leaf);
+h1, h2, h3 { line-height: 1.2; }
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--leaf-dark);
 }
 
+h2 {
+  position: relative;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.75rem;
+  color: var(--leaf-dark);
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3rem;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--leaf);
+}
+
+a { color: var(--leaf); }
+a:hover { color: var(--leaf-dark); }
+
+/* ===== Header ===== */
+
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.5rem;
-  background: var(--leaf);
+  gap: 0.75rem 1rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--leaf-dark), var(--leaf));
   color: white;
+  box-shadow: var(--shadow-md);
 }
 
-.site-header a {
-  color: white;
-}
+.site-header a { color: white; text-decoration: none; }
+
+.logo { width: 2.5rem; height: 2.5rem; }
 
 .site-name {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
-nav {
-  margin-left: auto;
-}
+nav { margin-left: auto; }
 
 nav ul {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.25rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-main {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 1.5rem;
+nav a {
+  display: block;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  transition: background 0.15s;
 }
 
-section {
-  margin-bottom: 2.5rem;
+nav a:hover,
+nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
 }
+
+/* ===== Layout ===== */
+
+main {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+section { margin-bottom: 3.5rem; scroll-margin-top: 5rem; }
 
 .intro {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 40rem) {
+  .intro { grid-template-columns: 1fr 1fr; }
+}
+
+.intro p { font-size: 1.1rem; color: var(--muted); }
+
+.hero {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.count { color: var(--muted); }
+
+/* ===== Herb cards ===== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The card itself is the link. Colours are set here so the text is always visible. */
+.card {
+  display: block;
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--leaf);
+  border-radius: var(--radius);
+  background: #ffffff;
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--leaf);
+  color: var(--ink);
+  outline: none;
+}
+
+.card:focus-visible { outline: 3px solid var(--lavender); outline-offset: 2px; }
+
+.card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--leaf-dark);
+}
+
+#herbs-list > li,
+#favorites-list > li {
+  display: flex;
+  flex-direction: column;
+}
+
+#herbs-list .card,
+#favorites-list .card {
+  height: auto;
+  flex: 1;
+}
+
+.favorite-button {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--lavender-dark);
+  border-radius: var(--radius-pill);
+  background: white;
+  color: var(--lavender-dark);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.favorite-button:hover,
+.favorite-button:focus-visible {
+  background: var(--lavender-light);
+  outline: 3px solid var(--lavender);
+  outline-offset: 2px;
+}
+
+.herb-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(20, 27, 21, 0.72);
+}
+
+.herb-dialog-backdrop[hidden] { display: none; }
+
+.herb-dialog {
+  --herb-accent: var(--lavender);
+  --herb-dark: var(--lavender-dark);
+  --herb-light: var(--lavender-light);
+  position: relative;
+  width: min(100%, 56rem);
+  max-height: min(90vh, 56rem);
+  overflow: auto;
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--herb-accent);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow-lg);
+}
+
+.herb-dialog[data-herb-theme="basil"] {
+  --herb-accent: #4b8b4b;
+  --herb-dark: #285b32;
+  --herb-light: #e8f3e6;
+}
+
+.herb-dialog[data-herb-theme="spearmint"] {
+  --herb-accent: #4b9b83;
+  --herb-dark: #286b59;
+  --herb-light: #e5f4ef;
+}
+
+.herb-dialog[data-herb-theme="rosemary"] {
+  --herb-accent: #78834a;
+  --herb-dark: #4f5b2e;
+  --herb-light: #f0f2df;
+}
+
+.herb-dialog[data-herb-theme="thyme"] {
+  --herb-accent: #83904d;
+  --herb-dark: #59642f;
+  --herb-light: #f1f3df;
+}
+
+.herb-dialog[data-herb-theme="sage"] {
+  --herb-accent: #7d9878;
+  --herb-dark: #4d6b4a;
+  --herb-light: #edf3e9;
+}
+
+.herb-dialog[data-herb-theme="chamomile"] {
+  --herb-accent: #d5a900;
+  --herb-dark: #775c00;
+  --herb-light: #fff6cf;
+}
+
+.herb-dialog[data-herb-theme="chives"] {
+  --herb-accent: #8b65a9;
+  --herb-dark: #5c3d78;
+  --herb-light: #f1e9f8;
+}
+
+.herb-dialog > #herb-dialog-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+}
+
+.herb-dialog > #herb-dialog-content > h2 {
+  padding-right: 3rem;
+  color: var(--herb-dark);
+}
+
+.herb-dialog > #herb-dialog-content > h2::after { background: var(--herb-accent); }
+.herb-dialog .herb-dialog-description { color: var(--muted); }
+.herb-dialog .herb-dialog-section { margin: 2rem 0; }
+
+.herb-dialog .herb-dialog-section h3 {
+  margin: 0 0 0.9rem;
+  color: var(--herb-dark);
+  font-size: 1.35rem;
+}
+
+.herb-dialog .facts { grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); }
+.herb-dialog .tips { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
+.herb-dialog .facts div { border-left-color: var(--herb-accent); background: var(--herb-light); }
+.herb-dialog .facts dd { color: var(--herb-dark); }
+.herb-dialog .tips li { border-top-color: var(--herb-accent); }
+.herb-dialog .tips strong,
+.herb-dialog .react-list li::marker { color: var(--herb-dark); }
+.herb-dialog .favorite-button { border-color: var(--herb-dark); color: var(--herb-dark); }
+.herb-dialog .favorite-button:hover,
+.herb-dialog .favorite-button:focus-visible { background: var(--herb-light); outline-color: var(--herb-accent); }
+.herb-dialog a { color: var(--herb-dark); }
+.herb-dialog .modal-close:focus-visible { outline-color: var(--herb-accent); }
+
+.herb-dialog-image {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.modal-close {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:focus-visible {
+  outline: 3px solid var(--lavender);
+  outline-offset: 2px;
+}
+
+.modal-open { overflow: hidden; }
+
+.card:hover h3 { text-decoration: underline; }
+
+.latin {
+  margin: 0.15rem 0 0.75rem;
+  font-style: italic;
+  color: var(--soil);
+}
+
+.use {
+  margin: 0 0 1rem;
+  color: var(--ink);
+}
+
+.life {
+  display: inline-block;
+  margin: 0;
+  padding: 0.15rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--leaf-light);
+  color: var(--leaf-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* ===== Footer ===== */
+
+footer {
+  padding: 2rem 1.5rem;
+  background: var(--leaf-dark);
+  text-align: center;
+  color: #dbe8d8;
+}
+
+footer a { color: white; }
+
+/* ===== Lavender page ===== */
+
+.lav-hero h1 { color: var(--lavender-dark); }
+
+.lav-hero .hero { box-shadow: 0 14px 30px rgba(91, 66, 131, 0.28); }
+
+.lavender-page h2 { color: var(--lavender-dark); }
+.lavender-page h2::after { background: var(--lavender); }
+.lavender-page a { color: var(--lavender-dark); }
+.lavender-page .site-header a { color: white; }
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  margin: 0;
+}
+
+.facts div {
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--lavender);
+  border-radius: var(--radius-sm);
+  background: var(--lavender-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.facts dt {
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--soil);
+}
+
+.facts dd {
+  margin: 0.15rem 0 0;
+  font-weight: 700;
+  color: var(--lavender-dark);
+}
+
+.explorer {
   display: grid;
   gap: 1.5rem;
   align-items: center;
 }
 
 @media (min-width: 40rem) {
-  .intro {
-    grid-template-columns: 1fr 1fr;
-  }
+  .explorer { grid-template-columns: 1fr 1fr; }
 }
 
-.hero {
+#lavender-svg {
+  width: 100%;
+  max-width: 22rem;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.part { cursor: pointer; transition: opacity 0.15s; }
+
+.part:hover,
+.part:focus { opacity: 0.75; outline: none; }
+
+.part.active { filter: drop-shadow(0 0 5px var(--lavender)); }
+
+.info {
+  min-height: 8rem;
+  padding: 1.25rem;
+  border-left: 5px solid var(--lavender);
+  border-radius: var(--radius-sm);
+  background: var(--lavender-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.info h3 { margin-top: 0; color: var(--lavender-dark); }
+.info p { margin-bottom: 0; }
+
+video {
+  width: 100%;
+  border-radius: var(--radius);
+  background: black;
+  box-shadow: var(--shadow-md);
+}
+
+.uses {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.uses img {
   width: 100%;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-  gap: 1rem;
+.uses ul { margin: 0; padding-left: 1.2rem; }
+.uses li { margin-bottom: 0.75rem; }
+.uses li::marker { color: var(--lavender); }
+
+@media (min-width: 40rem) {
+  .uses { grid-template-columns: 1fr 1fr; }
+}
+
+.tips {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
 }
 
-.card {
-  padding: 1rem;
+.tips li {
+  padding: 1rem 1.1rem;
   border: 1px solid var(--line);
-  border-radius: 0.5rem;
+  border-top: 4px solid var(--lavender);
+  border-radius: var(--radius-sm);
   background: white;
+  box-shadow: var(--shadow-sm);
 }
 
-.card h3 {
-  margin: 0;
+.tips strong { display: block; color: var(--lavender-dark); }
+
+/* Lavender video inside the herb dialog */
+.herb-dialog-video {
+  margin: 1rem 0;
 }
 
-.latin {
-  margin: 0 0 0.5rem;
-  font-style: italic;
-  color: var(--soil);
+.herb-dialog-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
 }
 
-.life {
-  display: inline-block;
-  margin: 0;
-  padding: 0.1rem 0.6rem;
-  border-radius: 1rem;
-  background: var(--leaf-light);
-  font-size: 0.875rem;
-}
-
-footer {
-  padding: 1.5rem;
-  border-top: 1px solid var(--line);
+.herb-dialog-video figcaption {
+  font-size: 0.9rem;
   text-align: center;
-  color: var(--soil);
+}
+
+/* ===== Search box ===== */
+
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 0 0 0.75rem;
+}
+
+.search label {
+  font-weight: 600;
+}
+
+.search input {
+  flex: 1 1 16rem;
+  max-width: 24rem;
+  padding: 0.6rem 0.9rem;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-pill);
+}
+
+.search input:focus-visible {
+  outline: 3px solid var(--leaf);
+  outline-offset: 2px;
+  border-color: var(--leaf);
+}
+
+/* ===== Wikipedia summary in the herb dialog ===== */
+
+.wiki-summary {
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--line);
+}
+
+/* ===== Community counts (visits and likes) ===== */
+
+.community-count {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+footer .community-count {
+  color: inherit;
+}
+
+/* ===== "Interested in this herb?" quiz ===== */
+
+.interest-intro {
+  margin: 0 0 0.75rem;
+}
+
+.interest-best {
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+  color: var(--herb-dark, var(--leaf-dark));
+}
+
+.interest-best:empty {
+  display: none;
+}
+
+.interest-error {
+  margin: 0.25rem 0 0;
+  color: #b3261e;
+}
+
+/* ===== Pop-up notifications ===== */
+
+.popups {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 30; /* above the herb dialog */
+  display: grid;
+  gap: 0.5rem;
+  max-width: min(22rem, calc(100vw - 2rem));
+}
+
+.popup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.75rem 0.75rem 1rem;
+  color: #fff;
+  background: var(--leaf-dark);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  animation: popup-in 0.3s ease-out;
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.popup p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.popup-close {
+  margin-left: auto;
+  padding: 0 0.4rem;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.popup-close:focus-visible {
+  outline: 2px solid #fff;
+  border-radius: var(--radius-sm);
+}
+
+.popup-hide {
+  opacity: 0;
+  transform: translateY(0.5rem);
+}
+
+@keyframes popup-in {
+  from { opacity: 0; transform: translateY(0.75rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popup { animation: none; transition: none; }
+}
+
+/* ===== Interest form pop-up window ===== */
+
+.interest-popup {
+  width: min(30rem, calc(100vw - 2rem));
+  padding: 1.5rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.interest-popup::backdrop {
+  background: rgba(20, 27, 21, 0.6);
+}
+
+.interest-popup h2 {
+  margin: 0 2.5rem 0.5rem 0;
+  font-size: 1.4rem;
+  color: var(--leaf-dark);
+}
+
+.interest-popup .modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* ===== Quiz pop-up ===== */
+
+.quiz-popup {
+  border-top: 6px solid var(--herb-accent, var(--leaf-dark));
+  animation: quiz-in 0.3s ease-out;
+}
+
+.quiz-popup h2 {
+  color: var(--herb-dark, var(--leaf-dark));
+}
+
+.quiz-progress {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.quiz-bar {
+  height: 0.5rem;
+  margin-bottom: 1rem;
+  background: var(--herb-light, #eef5ea);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.quiz-bar span {
+  display: block;
+  height: 100%;
+  background: var(--herb-accent, var(--leaf-dark));
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.quiz-question {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.quiz-option {
+  padding: 0.65rem 0.9rem;
+  font: inherit;
+  text-align: left;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.quiz-option:hover:not(:disabled),
+.quiz-option:focus-visible {
+  background: var(--herb-light, #eef5ea);
+  border-color: var(--herb-dark, var(--leaf-dark));
+}
+
+.quiz-option:focus-visible {
+  outline: 3px solid var(--herb-accent, var(--leaf-dark));
+  outline-offset: 2px;
+}
+
+.quiz-option:disabled {
+  cursor: default;
+  color: var(--ink);
+}
+
+.quiz-option.is-correct {
+  background: #e3f4e1;
+  border-color: #2e7d32;
+}
+
+.quiz-option.is-wrong {
+  background: #fbe4e2;
+  border-color: #b3261e;
+}
+
+.quiz-feedback {
+  min-height: 1.5rem;
+  margin: 0.75rem 0;
+  font-weight: 600;
+}
+
+.quiz-feedback.is-correct { color: #1f6a24; }
+.quiz-feedback.is-wrong { color: #9a2018; }
+
+.quiz-next[hidden] {
+  display: none;
+}
+
+.quiz-body {
+  text-align: left;
+}
+
+.quiz-badge {
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 0 auto;
+  font-size: 2.25rem;
+  background: var(--herb-light, #eef5ea);
+  border-radius: 50%;
+  animation: quiz-pop 0.5s ease-out both;
+}
+
+.quiz-result-heading,
+.quiz-score,
+.quiz-rate,
+.quiz-body .quiz-badge ~ p {
+  text-align: center;
+}
+
+.quiz-result-heading {
+  margin: 0.75rem 0 0;
+  font-size: 1.5rem;
+  color: var(--herb-dark, var(--leaf-dark));
+}
+
+.quiz-score {
+  margin: 0.25rem 0 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--herb-dark, var(--leaf-dark));
+}
+
+.quiz-rate {
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.quiz-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.quiz-popup .favorite-button {
+  border-color: var(--herb-dark, var(--leaf-dark));
+  color: var(--herb-dark, var(--leaf-dark));
+}
+
+.quiz-popup .favorite-button:focus-visible {
+  background: var(--herb-light, #eef5ea);
+  outline-color: var(--herb-accent, var(--leaf-dark));
+}
+
+@keyframes quiz-in {
+  from { opacity: 0; transform: translateY(0.75rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes quiz-pop {
+  from { transform: scale(0); }
+  70%  { transform: scale(1.15); }
+  to   { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quiz-popup, .quiz-badge { animation: none; }
+  .quiz-bar span, .quiz-option { transition: none; }
+}
+
+/* ===== Filter: All / Annual / Perennial ===== */
+
+.life-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.life-filter button {
+  padding: 0.4rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--leaf-dark);
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.life-filter button:hover {
+  border-color: var(--leaf);
+}
+
+.life-filter button[aria-pressed="true"] {
+  color: #fff;
+  background: var(--leaf);
+  border-color: var(--leaf);
+}
+
+.life-filter button:focus-visible {
+  outline: 3px solid var(--leaf);
+  outline-offset: 2px;
+}
+
+/* Cards hidden by the filter */
+#herbs-list > li[hidden] {
+  display: none;
+}
+
+/* ===== Herb of the day ===== */
+
+.herb-of-the-day {
+  margin-top: 0.5rem;
+}
+
+/* ===== Burger menu (☰) on small screens (by Beqa) =====
+   Wide screens: the normal links. Narrow screens (under 64rem, about 1024px):
+   the links hide behind the ☰ button. Used by the main page and the React page. */
+
+.menu-toggle {
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  margin: 0.25rem 0;
+  border-radius: var(--radius-pill);
+  background: currentColor;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.menu-toggle:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+@media (max-width: 64rem) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* The links are hidden until the ☰ button is clicked. */
+  #site-navigation {
+    display: none;
+  }
+
+  /* Open menu: a panel under the header. */
+  #site-navigation.is-open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    margin: 0;
+    padding: 0.5rem 1rem 1rem;
+    background: var(--leaf-dark);
+    box-shadow: var(--shadow-lg);
+  }
+
+  #site-navigation ul {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  #site-navigation a {
+    padding: 0.65rem 0.85rem;
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* ===== Herb dialog design (by Monika) ===== */
+
+/* Close button in the herb's own colours. */
+.herb-dialog .modal-close {
+  border-color: var(--herb-dark);
+  background: var(--herb-light);
+  color: var(--herb-dark);
+}
+
+/* Wider screens: a smaller photo and the growing tips in 2 columns.
+   Phones keep the full-width photo and 1 column, so nothing gets too small. */
+@media (min-width: 40rem) {
+  .herb-dialog-image {
+    display: block;
+    width: 50%;
+  }
+
+  .herb-dialog .tips {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

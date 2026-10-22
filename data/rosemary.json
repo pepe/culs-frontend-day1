@@ -1,0 +1,70 @@
+{
+  "id": "rosemary",
+  "name": "Rosemary",
+  "latin": "Salvia rosmarinus",
+  "family": "Lamiaceae (mint family)",
+  "life": "perennial",
+  "description": "An evergreen shrub with needle-like leaves and a strong, piney smell. Small blue flowers appear in spring.",
+  "theme": {
+    "light": "#dce7ef",
+    "dark": "#587d98"
+  },
+  "image": {
+    "src": "images/rosemary.jpg",
+    "alt": "Rosemary branches with thin needle-like leaves"
+  },
+  "quickFacts": [
+    {
+      "label": "Life cycle",
+      "value": "Perennial"
+    },
+    {
+      "label": "Origin",
+      "value": "Mediterranean"
+    },
+    {
+      "label": "Blooms",
+      "value": "March to May"
+    },
+    {
+      "label": "Height",
+      "value": "50 to 150 cm"
+    },
+    {
+      "label": "Likes",
+      "value": "Full sun, dry soil"
+    }
+  ],
+  "uses": [
+    {
+      "title": "Kitchen",
+      "text": "Roast potatoes, bread and roasted vegetables."
+    },
+    {
+      "title": "Skewers",
+      "text": "Woody stems can be used as skewers on the grill."
+    },
+    {
+      "title": "Garden",
+      "text": "Early flowers feed the first bees of spring."
+    }
+  ],
+  "growingTips": [
+    {
+      "title": "Sun",
+      "text": "Give it the sunniest, warmest spot you have."
+    },
+    {
+      "title": "Soil",
+      "text": "Light, well-drained soil; wet roots kill it."
+    },
+    {
+      "title": "Winter",
+      "text": "Protect it from hard frost, or bring the pot inside."
+    },
+    {
+      "title": "Pruning",
+      "text": "Trim after flowering, but not into the bare old wood."
+    }
+  ]
+}

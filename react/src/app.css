@@ -1,0 +1,264 @@
+.favorite-button {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--lavender-dark);
+  border-radius: var(--radius-pill);
+  background: white;
+  color: var(--lavender-dark);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.react-intro { align-items: center; }
+
+.herb-search {
+  display: grid;
+  max-width: 32rem;
+  gap: 0.4rem;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--leaf-dark);
+  font-weight: 650;
+}
+
+.herb-search input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+
+.herb-search input:focus-visible {
+  outline: 3px solid var(--lavender);
+  outline-offset: 2px;
+}
+
+.react-herb-card {
+  height: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--leaf);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.react-herb-card:hover,
+.react-herb-card:focus-within {
+  transform: translateY(-3px);
+  border-color: var(--leaf);
+  box-shadow: var(--shadow-lg);
+}
+
+.react-herb-card-open {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.react-herb-card-open:focus-visible {
+  border-radius: var(--radius-sm);
+  outline: 3px solid var(--lavender);
+}
+
+.react-herb-card-open h3 {
+  margin: 0;
+  color: var(--leaf-dark);
+  font-size: 1.35rem;
+}
+
+.react-herb-card-open:hover h3 { text-decoration: underline; }
+.react-herb-card-open .latin { margin-bottom: 0.75rem; }
+.react-herb-card-open .use { margin-bottom: 0.8rem; }
+
+.favorite-card-button {
+  margin: 0 0.5rem 0.4rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.favorite-button:hover,
+.favorite-button:focus-visible {
+  background: var(--lavender-light);
+  outline: 3px solid var(--lavender);
+  outline-offset: 2px;
+}
+
+.react-list {
+  padding-left: 1.25rem;
+}
+
+.react-list li {
+  margin-bottom: 0.75rem;
+}
+
+.react-list li::marker {
+  color: var(--lavender);
+}
+
+.react-message {
+  padding: 1rem;
+  border-left: 5px solid var(--lavender);
+  border-radius: var(--radius-sm);
+  background: var(--lavender-light);
+}
+
+.herb-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(20, 27, 21, 0.72);
+}
+
+.herb-modal {
+  --herb-accent: var(--lavender);
+  --herb-dark: var(--lavender-dark);
+  --herb-light: var(--lavender-light);
+  width: min(100%, 56rem);
+  max-height: min(90vh, 56rem);
+  overflow: auto;
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--herb-accent);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow-lg);
+}
+
+.herb-modal[data-herb-theme="basil"] {
+  --herb-accent: #4b8b4b;
+  --herb-dark: #285b32;
+  --herb-light: #e8f3e6;
+}
+
+.herb-modal[data-herb-theme="spearmint"] {
+  --herb-accent: #4b9b83;
+  --herb-dark: #286b59;
+  --herb-light: #e5f4ef;
+}
+
+.herb-modal[data-herb-theme="rosemary"] {
+  --herb-accent: #78834a;
+  --herb-dark: #4f5b2e;
+  --herb-light: #f0f2df;
+}
+
+.herb-modal[data-herb-theme="thyme"] {
+  --herb-accent: #83904d;
+  --herb-dark: #59642f;
+  --herb-light: #f1f3df;
+}
+
+.herb-modal[data-herb-theme="sage"] {
+  --herb-accent: #7d9878;
+  --herb-dark: #4d6b4a;
+  --herb-light: #edf3e9;
+}
+
+.herb-modal[data-herb-theme="chamomile"] {
+  --herb-accent: #d5a900;
+  --herb-dark: #775c00;
+  --herb-light: #fff6cf;
+}
+
+.herb-modal[data-herb-theme="chives"] {
+  --herb-accent: #8b65a9;
+  --herb-dark: #5c3d78;
+  --herb-light: #f1e9f8;
+}
+
+.herb-modal section { margin: 2rem 0; }
+
+.herb-modal section h3 {
+  margin: 0 0 0.9rem;
+  color: var(--herb-dark);
+  font-size: 1.35rem;
+}
+
+.herb-modal-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.herb-modal-heading h2 { margin-bottom: 0.25rem; }
+.herb-modal-heading .latin { margin-top: 0; }
+
+.modal-close {
+  flex: 0 0 auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:focus-visible {
+  outline: 3px solid var(--lavender);
+  outline-offset: 2px;
+}
+
+/* Close button of the herb pop-up in the herb's own colours (design by Monika). */
+.herb-modal .modal-close {
+  border-color: var(--herb-dark);
+  background: var(--herb-light);
+  color: var(--herb-dark);
+}
+
+.herb-modal-intro {
+  display: grid;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.herb-modal-intro p { color: var(--muted); }
+
+.herb-modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.herb-modal .facts {
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+
+.herb-modal .facts div { border-left-color: var(--herb-accent); background: var(--herb-light); }
+.herb-modal .facts dd { color: var(--herb-dark); }
+.herb-modal .tips { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
+.herb-modal .tips li { border-top-color: var(--herb-accent); }
+.herb-modal .tips strong,
+.herb-modal .react-list li::marker { color: var(--herb-dark); }
+.herb-modal .favorite-button { border-color: var(--herb-dark); color: var(--herb-dark); }
+.herb-modal .favorite-button:hover,
+.herb-modal .favorite-button:focus-visible { background: var(--herb-light); outline-color: var(--herb-accent); }
+.herb-modal a { color: var(--herb-dark); }
+
+.modal-open { overflow: hidden; }
+
+@media (min-width: 40rem) {
+  .herb-modal-intro:has(.herb-modal-image) { grid-template-columns: 1fr 1fr; }
+}
+
+/* Footer link must stay readable on the dark green footer. */
+.lavender-page footer a { color: #fff; }

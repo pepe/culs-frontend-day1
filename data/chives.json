@@ -1,0 +1,70 @@
+{
+  "id": "chives",
+  "name": "Chives",
+  "latin": "Allium schoenoprasum",
+  "family": "Amaryllidaceae (onion family)",
+  "life": "perennial",
+  "description": "Thin, hollow, grass-like leaves with a mild onion taste. Round purple flowers appear in early summer.",
+  "theme": {
+    "light": "#e5e0f4",
+    "dark": "#8170b0"
+  },
+  "image": {
+    "src": "images/chives.jpg",
+    "alt": "Green chives with round purple flowers"
+  },
+  "quickFacts": [
+    {
+      "label": "Life cycle",
+      "value": "Perennial"
+    },
+    {
+      "label": "Origin",
+      "value": "Europe and Asia"
+    },
+    {
+      "label": "Blooms",
+      "value": "May to June"
+    },
+    {
+      "label": "Height",
+      "value": "20 to 50 cm"
+    },
+    {
+      "label": "Likes",
+      "value": "Sun or part shade, moist soil"
+    }
+  ],
+  "uses": [
+    {
+      "title": "Kitchen",
+      "text": "Bread and butter, eggs, potatoes and soups."
+    },
+    {
+      "title": "Flowers",
+      "text": "The purple flowers are edible and look nice in salads."
+    },
+    {
+      "title": "Garden",
+      "text": "Bees love the flowers."
+    }
+  ],
+  "growingTips": [
+    {
+      "title": "Light",
+      "text": "Sun or part shade both work."
+    },
+    {
+      "title": "Water",
+      "text": "Keep the soil a little moist."
+    },
+    {
+      "title": "Cutting",
+      "text": "Cut leaves about 3 cm above the ground; they grow back quickly."
+    },
+    {
+      "title": "Dividing",
+      "text": "Every few years, dig up the clump and split it into smaller plants."
+    }
+  ]
+}

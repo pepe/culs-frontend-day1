@@ -1,0 +1,70 @@
+{
+  "id": "spearmint",
+  "name": "Spearmint",
+  "latin": "Mentha spicata",
+  "family": "Lamiaceae (mint family)",
+  "life": "perennial",
+  "description": "A fresh, cool-smelling herb with bright-green toothed leaves. It grows fast and spreads everywhere if you let it.",
+  "theme": {
+    "light": "#d9f0e5",
+    "dark": "#4f9278"
+  },
+  "image": {
+    "src": "images/spearmint.jpg",
+    "alt": "Fresh spearmint leaves with jagged edges"
+  },
+  "quickFacts": [
+    {
+      "label": "Life cycle",
+      "value": "Perennial"
+    },
+    {
+      "label": "Origin",
+      "value": "Europe and western Asia"
+    },
+    {
+      "label": "Blooms",
+      "value": "July to September"
+    },
+    {
+      "label": "Height",
+      "value": "30 to 100 cm"
+    },
+    {
+      "label": "Likes",
+      "value": "Part shade, moist soil"
+    }
+  ],
+  "uses": [
+    {
+      "title": "Tea",
+      "text": "Fresh leaves in hot water make a simple mint tea."
+    },
+    {
+      "title": "Kitchen",
+      "text": "Lemonade, salads, yoghurt sauces and new potatoes."
+    },
+    {
+      "title": "Garden",
+      "text": "Bees and butterflies visit its small purple flowers."
+    }
+  ],
+  "growingTips": [
+    {
+      "title": "Pot",
+      "text": "Grow it in a pot, because its roots spread under the ground."
+    },
+    {
+      "title": "Light",
+      "text": "Sun or part shade both work."
+    },
+    {
+      "title": "Water",
+      "text": "Keep the soil moist; mint does not like to dry out."
+    },
+    {
+      "title": "Cutting",
+      "text": "Cut it back often to get fresh, tender leaves."
+    }
+  ]
+}

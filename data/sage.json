@@ -1,0 +1,70 @@
+{
+  "id": "sage",
+  "name": "Sage",
+  "latin": "Salvia officinalis",
+  "family": "Lamiaceae (mint family)",
+  "life": "perennial",
+  "description": "A small shrub with soft, grey-green, velvety leaves and a strong, savoury smell. Purple-blue flowers appear in early summer.",
+  "theme": {
+    "light": "#dce3d6",
+    "dark": "#74866a"
+  },
+  "image": {
+    "src": "images/sage.jpg",
+    "alt": "Soft grey-green sage leaves"
+  },
+  "quickFacts": [
+    {
+      "label": "Life cycle",
+      "value": "Perennial"
+    },
+    {
+      "label": "Origin",
+      "value": "Mediterranean"
+    },
+    {
+      "label": "Blooms",
+      "value": "May to July"
+    },
+    {
+      "label": "Height",
+      "value": "30 to 70 cm"
+    },
+    {
+      "label": "Likes",
+      "value": "Full sun, well-drained soil"
+    }
+  ],
+  "uses": [
+    {
+      "title": "Kitchen",
+      "text": "Butter sauces, pasta, stuffing and roasted pumpkin."
+    },
+    {
+      "title": "Tea",
+      "text": "Sage tea is a traditional drink in many countries."
+    },
+    {
+      "title": "Garden",
+      "text": "Bumblebees love its flowers."
+    }
+  ],
+  "growingTips": [
+    {
+      "title": "Sun",
+      "text": "Plant it in full sun."
+    },
+    {
+      "title": "Soil",
+      "text": "Light, well-drained soil; it hates wet feet."
+    },
+    {
+      "title": "Water",
+      "text": "Water young plants; older plants need very little."
+    },
+    {
+      "title": "Renewal",
+      "text": "Cut it back in spring and replace the plant every few years when it gets woody."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "chamomile",
+  "name": "Chamomile",
+  "latin": "Matricaria chamomilla",
+  "family": "Asteraceae (daisy family)",
+  "life": "annual",
+  "description": "A delicate plant with small daisy-like flowers, white petals and a yellow centre. The flowers smell a little like apples.",
+  "theme": {
+    "light": "#fff0c9",
+    "dark": "#c69b36"
+  },
+  "image": {
+    "src": "images/chamomile.jpg",
+    "alt": "Small white chamomile flowers with yellow centres"
+  },
+  "quickFacts": [
+    {
+      "label": "Life cycle",
+      "value": "Annual"
+    },
+    {
+      "label": "Origin",
+      "value": "Europe and western Asia"
+    },
+    {
+      "label": "Blooms",
+      "value": "May to September"
+    },
+    {
+      "label": "Height",
+      "value": "20 to 60 cm"
+    },
+    {
+      "label": "Likes",
+      "value": "Full sun, light soil"
+    }
+  ],
+  "uses": [
+    {
+      "title": "Tea",
+      "text": "Dried flowers make a calming cup of tea."
+    },
+    {
+      "title": "Drying",
+      "text": "Dry the flower heads on paper in a shady, airy place."
+    },
+    {
+      "title": "Garden",
+      "text": "Hoverflies and small bees visit the flowers."
+    }
+  ],
+  "growingTips": [
+    {
+      "title": "Sowing",
+      "text": "Sow the seeds on the soil surface in spring; they need light to sprout."
+    },
+    {
+      "title": "Sun",
+      "text": "Full sun gives the most flowers."
+    },
+    {
+      "title": "Water",
+      "text": "Water gently until the plants are established."
+    },
+    {
+      "title": "Harvest",
+      "text": "Pick the flowers when they are fully open, on a dry day."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "thyme",
+  "name": "Thyme",
+  "latin": "Thymus vulgaris",
+  "family": "Lamiaceae (mint family)",
+  "life": "perennial",
+  "description": "A tiny, low shrub with small grey-green leaves and a warm, earthy smell. Its pink flowers are full of bees.",
+  "theme": {
+    "light": "#f2e7ce",
+    "dark": "#b18a4a"
+  },
+  "image": {
+    "src": "images/thyme.jpg",
+    "alt": "A low bush of thyme with tiny leaves"
+  },
+  "quickFacts": [
+    {
+      "label": "Life cycle",
+      "value": "Perennial"
+    },
+    {
+      "label": "Origin",
+      "value": "Southern Europe"
+    },
+    {
+      "label": "Blooms",
+      "value": "May to July"
+    },
+    {
+      "label": "Height",
+      "value": "15 to 30 cm"
+    },
+    {
+      "label": "Likes",
+      "value": "Full sun, dry, poor soil"
+    }
+  ],
+  "uses": [
+    {
+      "title": "Kitchen",
+      "text": "Soups, stews, tomato sauces and roasted meat."
+    },
+    {
+      "title": "Tea",
+      "text": "A few sprigs in hot water make a warming tea."
+    },
+    {
+      "title": "Garden",
+      "text": "Bees love its flowers."
+    }
+  ],
+  "growingTips": [
+    {
+      "title": "Sun",
+      "text": "Plant it in full sun."
+    },
+    {
+      "title": "Soil",
+      "text": "Poor, stony, well-drained soil is best; no fertiliser needed."
+    },
+    {
+      "title": "Water",
+      "text": "Water only when the soil is completely dry."
+    },
+    {
+      "title": "Pruning",
+      "text": "Trim it after flowering to keep it compact."
+    }
+  ]
+}

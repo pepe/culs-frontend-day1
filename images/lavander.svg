@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" role="group"
+             aria-label="Drawing of a lavender plant. Choose a part to learn about it.">
+          <defs>
+            <g id="spike">
+              <ellipse cx="0" cy="0" rx="5" ry="7"/>
+              <ellipse cx="0" cy="12" rx="8" ry="8"/>
+              <ellipse cx="0" cy="26" rx="9" ry="9"/>
+              <ellipse cx="0" cy="41" rx="9" ry="9"/>
+              <ellipse cx="0" cy="56" rx="8" ry="8"/>
+            </g>
+          </defs>
+
+          <rect width="300" height="400" fill="#eaf4fb"/>
+          <rect y="300" width="300" height="100" fill="#5b4636"/>
+
+          <g class="part" data-part="roots" tabindex="0" role="button" aria-label="Roots"
+             fill="none" stroke="#d9b98f" stroke-width="3" stroke-linecap="round">
+            <rect x="90" y="300" width="120" height="95" fill="transparent" stroke="none"/>
+            <path d="M150 300 C150 330 140 350 120 385"/>
+            <path d="M150 300 C150 330 160 350 180 385"/>
+            <path d="M150 300 C148 335 150 360 150 392"/>
+            <path d="M145 330 C130 335 115 340 100 350"/>
+            <path d="M155 330 C170 335 185 340 200 350"/>
+          </g>
+
+          <g class="part" data-part="stem" tabindex="0" role="button" aria-label="Stems"
+             fill="none" stroke="#4f8a4a" stroke-width="6" stroke-linecap="round">
+            <path d="M150 300 L110 140"/>
+            <path d="M150 300 L150 110"/>
+            <path d="M150 300 L190 140"/>
+          </g>
+
+          <g class="part" data-part="leaves" tabindex="0" role="button" aria-label="Leaves"
+             fill="#7fb078">
+            <ellipse cx="130" cy="265" rx="4" ry="28" transform="rotate(-55 130 265)"/>
+            <ellipse cx="170" cy="265" rx="4" ry="28" transform="rotate(55 170 265)"/>
+            <ellipse cx="135" cy="230" rx="4" ry="24" transform="rotate(-40 135 230)"/>
+            <ellipse cx="165" cy="230" rx="4" ry="24" transform="rotate(40 165 230)"/>
+            <ellipse cx="120" cy="287" rx="4" ry="22" transform="rotate(-70 120 287)"/>
+            <ellipse cx="180" cy="287" rx="4" ry="22" transform="rotate(70 180 287)"/>
+          </g>
+
+          <g class="part" data-part="flowers" tabindex="0" role="button" aria-label="Flowers"
+             fill="#8e6bbf">
+            <use href="#spike" x="110" y="80"/>
+            <use href="#spike" x="150" y="50"/>
+            <use href="#spike" x="190" y="80"/>
+          </g>
+
+          <g class="part" data-part="bee" tabindex="0" role="button" aria-label="Bee"
+             transform="translate(238 70)">
+            <circle r="20" fill="transparent"/>
+            <ellipse cx="-3" cy="-11" rx="8" ry="5" fill="#ffffff" opacity="0.85"/>
+            <ellipse rx="13" ry="8" fill="#f2c230"/>
+            <path d="M-3 -7 V7 M4 -7 V7" stroke="#222" stroke-width="3"/>
+          </g>
+</svg>

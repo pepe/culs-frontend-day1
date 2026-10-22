@@ -1,0 +1,70 @@
+{
+  "id": "basil",
+  "name": "Basil",
+  "latin": "Ocimum basilicum",
+  "family": "Lamiaceae (mint family)",
+  "life": "annual",
+  "description": "A soft, bright-green herb with a sweet, peppery smell. It loves warmth and is the heart of Italian summer cooking.",
+  "theme": {
+    "light": "#ddebd5",
+    "dark": "#648b58"
+  },
+  "image": {
+    "src": "images/basil.jpg",
+    "alt": "A pot of fresh green basil leaves"
+  },
+  "quickFacts": [
+    {
+      "label": "Life cycle",
+      "value": "Annual"
+    },
+    {
+      "label": "Origin",
+      "value": "Tropical Asia and Africa"
+    },
+    {
+      "label": "Blooms",
+      "value": "July to September"
+    },
+    {
+      "label": "Height",
+      "value": "30 to 60 cm"
+    },
+    {
+      "label": "Likes",
+      "value": "Warmth, full sun, moist soil"
+    }
+  ],
+  "uses": [
+    {
+      "title": "Kitchen",
+      "text": "Pesto, tomato salads, pizza and pasta."
+    },
+    {
+      "title": "Raw",
+      "text": "Add the leaves at the end; heat dulls the flavour."
+    },
+    {
+      "title": "Garden",
+      "text": "Grow it next to tomatoes in a sunny spot."
+    }
+  ],
+  "growingTips": [
+    {
+      "title": "Sun",
+      "text": "It needs warmth: plant it outside only after the last frost."
+    },
+    {
+      "title": "Water",
+      "text": "Keep the soil slightly moist and water at the base, not on the leaves."
+    },
+    {
+      "title": "Pinching",
+      "text": "Pinch off flower buds so the plant keeps making leaves."
+    },
+    {
+      "title": "Harvest",
+      "text": "Pick leaves from the top, just above a pair of leaves, so it grows bushy."
+    }
+  ]
+}
