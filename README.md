@@ -1,4 +1,4 @@
-# Samuel Brabec(Distant-Night), Ivan Budko(rabochiyclasss)
+# Ivan Budko(rabochiyclasss)
 # The Little Herb Garden
 
 A responsive single-page web application (SPA) displaying garden herbs, built using vanilla web technologies (HTML, CSS, JavaScript) without any external frameworks or libraries.
